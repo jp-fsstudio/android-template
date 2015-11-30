@@ -10,24 +10,24 @@ Android app template
 * [Parcelable generator](https://github.com/mcharmas/android-parcelable-intellij-plugin)
 
 ##What's included:
-* [Staging and Production]() build flavors with different package names ([read more](http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Product-flavors))
-* Logger configuration [supporting `Exception` logging]() ([read more](https://github.com/JakeWharton/timber))
+* [Staging and Production](https://github.com/jpbalarini/android-template/blob/master/app/build.gradle#L28-L37) build flavors with different package names ([read more](http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Product-flavors))
+* Logger configuration [supporting `Exception` logging](https://github.com/jpbalarini/android-template/blob/master/app/src/main/java/com/fsstudio/template/App.java#L24-L26) ([read more](https://github.com/JakeWharton/timber))
 * [Java 8 lambdas support and configuration]() ([read more](https://github.com/evant/gradle-retrolambda))
 * [Robolectric support and configuration]() ([read more](http://blog.blundell-apps.com/android-gradle-app-with-robolectric-junit-tests/))
 * [Dagger](http://square.github.io/dagger/) configuration ([read more](http://stackoverflow.com/a/16923040)):
-	* [`Application`]() subclass with an [application-wide scope]()
-	* [`Activity`]() subclass with configured [UI-wide scope]() and a root `Fragment`
+	* [`Application`](https://github.com/jpbalarini/android-template/blob/master/app/src/main/java/com/fsstudio/template/App.java) subclass with an [application-wide scope]()
+	* [`Activity`](https://github.com/jpbalarini/android-template/blob/master/app/src/main/java/com/fsstudio/template/MainActivity.java) subclass with configured [UI-wide scope]() and a root `Fragment`
 	* [`ScopedFragment`]() for `Fragment`-wide [scopes]()
 * Default `Menu` with *Settings* `MenuItem`
 * [`Preferences`]() interface for the `SharedPreferences` boilerplate reduction (using [Esperandro](http://dkunzler.github.io/esperandro/))
-* [`PreferenceFragment`]() with default Preferences xml added to a `MainFragment`'s *Settings* `MenuItem`
-* *Android Lint* [configuration]()
-* *Travis CI* build [script]():
+* [`PreferenceFragment`](https://github.com/jpbalarini/android-template/blob/master/app/src/main/java/com/fsstudio/template/fragments/PrefsFragment.java) with default Preferences xml added to a `MainFragment`'s *Settings* `MenuItem`
+* *Android Lint* [configuration](https://github.com/jpbalarini/android-template/blob/master/app/build.gradle#L64-L69)
+* *Travis CI* build [script](https://github.com/jpbalarini/android-template/blob/master/.travis.yml):
     * Downloading an *Android SDK*
     * Building
     * Running *Android Lint*
     * Running *Robolectric* tests
-    * Hook up your continuous deployment target in [`after_success`]()
+    * Hook up your continuous deployment target in after_success
 * Release build signing and naming configuration
 
 ##What's not included
@@ -49,13 +49,13 @@ Android app template
 
  3. Rename the project:
         sh rename_project.sh
-    It will ask you the package name and rename the project based on that. Make shure to enter something with three identifiers, for example: com.example.app
+    It will ask you the package name and rename the project based on that. Make sure to enter something with three identifiers, for example: com.example.app
  3. Import the project into your favourite IDE (only [Android Studio](https://developer.android.com/sdk/installing/studio.html) and [IntelliJ IDEA 13](http://www.jetbrains.com/idea/) are supported at the moment).
 Just select the root `build.gradle` and your IDE will do the rest.
 It will ask you to change the language level - do it, we're using Java 8 now
 
 ###Making a release build
-* Just uncomment [these lines]() and fill them up with your credentials
+* Just uncomment [these lines](https://github.com/jpbalarini/android-template/blob/master/app/build.gradle#L39-L46) and fill them up with your credentials
 
 ##Notes on ProGuarding
 `TODO`
