@@ -10,9 +10,6 @@ import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by adelnizamutdinov on 22/12/14
- */
 public class TestApp extends App {
 
     @Override
