@@ -1,4 +1,4 @@
-package com.flatstack.android.module;
+package com.fsstudio.template.module;
 
 import org.junit.Before;
 import org.junit.Test;

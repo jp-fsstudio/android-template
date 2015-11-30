@@ -1,4 +1,4 @@
-package com.flatstack.android.dagger.modules;
+package com.fsstudio.template.dagger.modules;
 
 import android.app.Application;
 

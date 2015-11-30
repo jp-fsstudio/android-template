@@ -1,8 +1,8 @@
-package com.flatstack.android.fragments;
+package com.fsstudio.template.fragments;
 
 import android.support.v4.app.FragmentManager;
-import com.flatstack.android.R;
-import com.flatstack.android.rx.RxActivity;
+import com.fsstudio.template.R;
+import com.fsstudio.template.rx.RxActivity;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

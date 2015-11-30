@@ -1,4 +1,4 @@
-package com.flatstack.android.fragments;
+package com.fsstudio.template.fragments;
 
 import android.app.Application;
 import android.support.v4.app.FragmentManager;
@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.flatstack.android.R;
-import com.flatstack.android.rx.RxActivity;
+import com.fsstudio.template.R;
+import com.fsstudio.template.rx.RxActivity;
 
 import org.junit.Before;
 import org.junit.Test;

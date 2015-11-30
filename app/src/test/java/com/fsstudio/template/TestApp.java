@@ -1,10 +1,10 @@
-package com.flatstack.android;
+package com.fsstudio.template;
 
-import com.flatstack.android.dagger.components.AppComponent;
-import com.flatstack.android.dagger.components.DaggerAppComponent;
-import com.flatstack.android.dagger.modules.AppModule;
-import com.flatstack.android.dagger.modules.TestModule;
-import com.flatstack.android.utils.Lists;
+import com.fsstudio.template.dagger.components.AppComponent;
+import com.fsstudio.template.dagger.components.DaggerAppComponent;
+import com.fsstudio.template.dagger.modules.AppModule;
+import com.fsstudio.template.dagger.modules.TestModule;
+import com.fsstudio.template.utils.Lists;
 
 import java.util.List;
 
