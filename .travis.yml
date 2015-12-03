@@ -1,38 +1,27 @@
 language: android
 jdk: oraclejdk8
 sudo: false
-
 android:
   components:
-    - build-tools-21.1.2
-    - android-21
-    - extra-android-m2repository
-    # Uncomment this if you need emulator
-    # - sys-img-x86-android-21
+  - build-tools-21.1.2
+  - android-21
+  - extra-android-m2repository
   licenses:
-    - 'android-sdk-license-.+'
-
+  - android-sdk-license-.+
 before_install:
-    - export TERM=dumb
-    - chmod +x gradlew
-
-# Uncomment this if you need emulator
-# before_script:
-#  - echo no | android create avd --force -n test -t android-21 --abi x86
-#  - emulator -avd test -no-skin -no-audio -no-window &
-#  - android-wait-for-emulator
-#  - adb shell input keyevent 82 &
-
-# Robolectric tests
+- export TERM=dumb
+- chmod +x gradlew
+- chmod +x ./upload.sh
 script:
-    - ./gradlew build check
-
-# Instrument tests
-# script: ./gradlew build check connectedCheck
-
+- ./gradlew build check
 branches:
   only:
-    - master
-    - production
-
-# after_success: uncomment this and add your own deployment targets
+  - master
+  - production
+env:
+  global:
+  - APPNAME="Android-Template"
+  - secure: FHaKIyTpVX88XbhVyYMS1xZlaazmMy801e1M8YFcYNOGcZiR12MfjHyeVdjelnjcuN00tuMyev87QY7ca/b4xbqIBpCw6XlQ/EK/QVnQud/WUZyMeW15fLGGKNbWmX38niAuGTxaTMsF0yEejD7RPo8juHh0zdcXx/RoddFKk47F0w75my5bfPCdvbh0C0GL/ot/Dm0caZHK7OGdkn9Wzkid0KxoWE5KBKXTV1raoNh2KzJtpHIpdMyTmq16JVSn4/WxF0PujV0AweCmZw1MWKEZHfV6p3GVosaAVClI0dDbZ31ESbnzJQK76tCpx+TvTkk94vuLe1Jh0KfqKLFM93uc7qf24Qk73Lt599m+7JbQKsAE9j89vaCiH6kzdzBg5rweDTeT5ZEQ1oOvh3mD7RlJxy5u7whUGGtmgaCcXn3/IyWtxRFVlyWA+HWWaoZ44Uz8XjpIJWEcbZvbSOeMFeNNO7pWRJHzUfJTI3PBtjKSf2tSRUNnXlhEgzmsipa5v8BDh2yaB7qVga67x/+WAXlONiKMIKpPPJrRiWCfnug0AY1S2Qf06xK91UrxZoiVUdKwn/JWMuNYQAUu1H/m02hRBICz1Knjmd2ME2QW+a5/ReWFY3jlpXGlsQHK+W57ygoeDH8WzoRlYiJlruAH9MkuQpkyNiUKsVR4ZW3o0DU=
+  - secure: UmUGMe+HHvbqu2HtSu44zdQ7U5nyDh3Ro7QzIp7gfLBcdl0cSudnzUfKyQt6EHxycp9tmEziu0T9YFuTwCaFwZA2gvxhspsXTDbSwXOOBqDvG0Ar3C9xuggs90aZiK6f7t4B18KBuKU/V5ySZcWMnSkGQrpy2eXLbnHPIQrzzUR8ZxW1S9UIqCpQ1e6CgmtHkzO335NTNC9L0fBn2clzsMWwMLmxXfSKWG5YcLLh7qQ4j/qf2U4KHCttW5qgB9hEj1lsRkWjBmwLqAkRVpeDH6rYCb+aRilaM9VmFGUufLfm9PfVNAOOsv1RuGv7ctxjncyQdvvUjYfKjC4Gh1Qmz57vty/n2/ZJ8vsxJnNfcF7Qc3ENhJ9W2g5SGZ6vzmsCkrqJCjSH9JFxoScJj3hooKabBULHQ/lxK3+zKmpZtVaJNTEuqNbVqQVBgmQOamGjgpBhFlpQYEWC32JjLnlj53OCDqDwQkfOFKd+twQ4L9ASZ3YBXQyms1p4Qx64D5u6h+LfVHjK7AdEBHVl9zfQn4KoKHowTxHGUUVXGEICQKjJwOQTrmIB0GmoCdos43CYT/sL3y0u2lv0bC68FYqG3xvIxWIOCWR8wH709Wf9O0xlxju7JvbUflPDiY0YUAAJ5GViqKP8ML9d/es8C4c3bocONIhbYpNsahI8Y4eZJh0=
+after_success:
+- ./upload.sh
