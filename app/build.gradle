@@ -21,8 +21,6 @@ android {
     targetSdkVersion TARGET_SDK_VERSION
 
     applicationId APPLICATION_ID
-    versionCode 1
-    versionName '0.1.0'
   }
 
   productFlavors {
