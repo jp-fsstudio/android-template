@@ -25,3 +25,10 @@ env:
   - secure: UmUGMe+HHvbqu2HtSu44zdQ7U5nyDh3Ro7QzIp7gfLBcdl0cSudnzUfKyQt6EHxycp9tmEziu0T9YFuTwCaFwZA2gvxhspsXTDbSwXOOBqDvG0Ar3C9xuggs90aZiK6f7t4B18KBuKU/V5ySZcWMnSkGQrpy2eXLbnHPIQrzzUR8ZxW1S9UIqCpQ1e6CgmtHkzO335NTNC9L0fBn2clzsMWwMLmxXfSKWG5YcLLh7qQ4j/qf2U4KHCttW5qgB9hEj1lsRkWjBmwLqAkRVpeDH6rYCb+aRilaM9VmFGUufLfm9PfVNAOOsv1RuGv7ctxjncyQdvvUjYfKjC4Gh1Qmz57vty/n2/ZJ8vsxJnNfcF7Qc3ENhJ9W2g5SGZ6vzmsCkrqJCjSH9JFxoScJj3hooKabBULHQ/lxK3+zKmpZtVaJNTEuqNbVqQVBgmQOamGjgpBhFlpQYEWC32JjLnlj53OCDqDwQkfOFKd+twQ4L9ASZ3YBXQyms1p4Qx64D5u6h+LfVHjK7AdEBHVl9zfQn4KoKHowTxHGUUVXGEICQKjJwOQTrmIB0GmoCdos43CYT/sL3y0u2lv0bC68FYqG3xvIxWIOCWR8wH709Wf9O0xlxju7JvbUflPDiY0YUAAJ5GViqKP8ML9d/es8C4c3bocONIhbYpNsahI8Y4eZJh0=
 after_success:
 - ./scripts/upload.sh
+notifications:
+  email:
+    recipients:
+      - juanpablo@fsstudio.com
+      - matt@fsstudio.com
+    on_success: change
+    on_failure: always
