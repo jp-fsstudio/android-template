@@ -54,6 +54,16 @@ Android app template
 Just select the root `build.gradle` and your IDE will do the rest.
 It will ask you to change the language level - do it, we're using Java 8 now
 
+### Configure TravisCI
+* Check the .travis.yml file
+* Replace Android-Template with your project name
+* Use the travis encrypt command to encrypt the following variables:
+
+```sh
+travis encrypt "HOCKEY_APP_ID=super_secret" --add -r repoUser/repoName
+travis encrypt "HOCKEY_APP_TOKEN=super_secret" --add -r repoUser/repoName
+```
+
 ###Making a release build
 * Just uncomment [these lines](https://github.com/jpbalarini/android-template/blob/master/app/build.gradle#L39-L46) and fill them up with your credentials
 
