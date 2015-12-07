@@ -27,6 +27,6 @@ after_success:
 - ./scripts/upload.sh
 notifications:
   email:
-    recipients: 
-    on_success: change
+    recipients:
+    on_success: always
     on_failure: always
