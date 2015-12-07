@@ -28,7 +28,7 @@ after_success:
 notifications:
   email:
     recipients:
-      - juanpablo@fsstudio.com
-      - matt@fsstudio.com
+      # - juanpablo@fsstudio.com
+      # - matt@fsstudio.com
     on_success: change
     on_failure: always

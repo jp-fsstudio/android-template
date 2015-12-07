@@ -1,6 +1,6 @@
 echo "Going to upload apk"
 
-BUILD_DIR_CONTENTS="$(ls ../app/build/outputs/apk)"
+BUILD_DIR_CONTENTS="$(ls ./app/build/outputs/apk)"
 echo "${BUILD_DIR_CONTENTS}"
 
 VERSION_NAME=$(ruby ./scripts/find_version.rb ./app/src/main/AndroidManifest.xml versionName)
