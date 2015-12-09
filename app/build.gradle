@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.robolectric'
+import java.util.regex.Pattern
 
 ext {
   APPLICATION_ID = "com.fsstudio.template"
@@ -132,4 +133,26 @@ configurations {
 //  compile.exclude module: 'guava' // some deps drag this monster into the final APK
   testCompile.exclude module: 'commons-logging'
   testCompile.exclude module: 'httpclient'
+}
+
+task incrementVersionCode << {
+  println(":incrementVersionCode - Incrementing Version Code...")
+  def manifestFile = file("src/main/AndroidManifest.xml")
+  def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
+  def manifestText = manifestFile.getText()
+  def matcherVersionCode = patternVersionCode.matcher(manifestText)
+  matcherVersionCode.find()
+  def mVersionCode = Integer.parseInt(matcherVersionCode.group(1))
+  def mNextVersionCode = mVersionCode + 1
+  def manifestContent = matcherVersionCode.replaceAll("versionCode=\"" + mNextVersionCode + "\"")
+  println(":incrementVersionCode - current versionCode=" + mVersionCode);
+  println(":incrementVersionCode - next versionCode=" + mNextVersionCode);
+  manifestFile.write(manifestContent)
+}
+
+// Comment this if you dont want to auto increase build number on each build
+tasks.whenTaskAdded { task ->
+    if (task.name == 'assembleProductionDebug') {
+        task.dependsOn 'incrementVersionCode'
+    }
 }

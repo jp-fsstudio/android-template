@@ -54,6 +54,10 @@ Android app template
 Just select the root `build.gradle` and your IDE will do the rest.
 It will ask you to change the language level - do it, we're using Java 8 now
 
+### Configure HockeyApp
+* Create a new app on Hockeyapp
+* Save the newly created APP_ID and your account TOKEN, you will use it later
+
 ### Configure TravisCI
 * Check the .travis.yml file
 * Replace Android-Template with your project name
@@ -66,6 +70,3 @@ travis encrypt "HOCKEY_APP_TOKEN=super_secret" --add -r repoUser/repoName
 
 ###Making a release build
 * Just uncomment [these lines](https://github.com/jpbalarini/android-template/blob/master/app/build.gradle#L39-L46) and fill them up with your credentials
-
-##Notes on ProGuarding
-`TODO`

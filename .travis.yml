@@ -16,8 +16,7 @@ script:
 - ./gradlew build check
 branches:
   only:
-  - master
-  - production
+  - develop
 env:
   global:
   - APPNAME="Android-Template"
