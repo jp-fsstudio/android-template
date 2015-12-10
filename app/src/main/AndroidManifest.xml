@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.fsstudio.template"
-          android:versionCode="1"
+          android:versionCode="4"
           android:versionName="0.0.1">
 
     <!-- this is only for tests with Memento, which is checking the build version -->
@@ -27,5 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="a518630230e7d2c7d555574a684bc930444b55e4" />
     </application>
 </manifest>

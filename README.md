@@ -31,7 +31,6 @@ Android app template
 * Release build signing and naming configuration
 
 ##What's not included
-* [Crashlytics](crashlytics.com): they live in their own world, and including their plugin in template project just fails the build, if `apikey` is not specified. Also, getting `apikey` without an IDE plugin is impossible. You can get it [here](https://crashlytics.com/downloads/android-studio)
 * Test coverage: still in the process of figuring out what's the best way to enable unit test coverage for Android with Robolectric. Any suggestions will be highly appreciated
 
 ##Setup
@@ -53,6 +52,14 @@ Android app template
  3. Import the project into your favourite IDE (only [Android Studio](https://developer.android.com/sdk/installing/studio.html) and [IntelliJ IDEA 13](http://www.jetbrains.com/idea/) are supported at the moment).
 Just select the root `build.gradle` and your IDE will do the rest.
 It will ask you to change the language level - do it, we're using Java 8 now
+ 4. Configure Fabric.
+    Get your ApiKey and apiSecret from [Fabric](https://fabric.io/settings/organizations).
+    Replace the ApiKey in the AndroidManifest.xml. Create the fabric.properties under /app and put the following:
+    ```
+    apiSecret=YOUR_API_SECRET
+    ```
+    Build your project until it appears on the Fabric Dashboard.
+
 
 ### Configure HockeyApp
 * Create a new app on Hockeyapp
